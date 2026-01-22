@@ -4,10 +4,10 @@ from typing import Optional
 
 import torch
 
-from src.01_config import validate_video_quality, print_quality_report
-from src.03_pose import extract_video_keypoints, VideoKeypoints
-from src.04_models import BoxingActionClassifier
-from src.06_visualization import sliding_window_inference, VideoAnalysis
+from src.config import validate_video_quality, print_quality_report
+from src.pose import extract_video_keypoints, VideoKeypoints
+from src.models import BoxingActionClassifier
+from src.visualization import sliding_window_inference, VideoAnalysis
 
 
 def run_full_analysis(

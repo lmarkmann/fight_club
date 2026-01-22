@@ -8,9 +8,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from src.02_data.taxonomy import ACTION_LABELS
-from src.03_pose.dataclasses import VideoKeypoints
-from src.03_pose.normalization import normalize_pose
+from src.data.taxonomy import ACTION_LABELS
+from src.pose.dataclasses import VideoKeypoints
+from src.pose.normalization import normalize_pose
 
 
 @dataclass

@@ -1,24 +1,24 @@
 """Fight Club: Pose-based action classification for combat sports."""
 
-from src.01_config import (
+from src.config import (
     VideoQualityReport,
     validate_video_quality,
     print_quality_report,
 )
-from src.02_data import BoxingAction, ACTION_LABELS
-from src.03_pose import (
+from src.data import BoxingAction, ACTION_LABELS
+from src.pose import (
     VideoKeypoints,
     extract_video_keypoints,
     normalize_pose,
 )
-from src.04_models import BoxingActionClassifier
-from src.05_training import train_epoch, evaluate_model, PoseSequenceDataset
-from src.06_visualization import (
+from src.models import BoxingActionClassifier
+from src.training import train_epoch, evaluate_model, PoseSequenceDataset
+from src.visualization import (
     ActionPrediction,
     VideoAnalysis,
     sliding_window_inference,
 )
-from src.07_pipeline import run_full_analysis
+from src.pipeline import run_full_analysis
 
 __all__ = [
     # Config

@@ -8,17 +8,17 @@ This project implements a machine learning pipeline to classify boxing actions f
 
 ## Module Index
 
-The `src/` directory follows a numbered convention reflecting the ML pipeline data flow:
+The `src/` directory is organized by pipeline stage:
 
 | Module | Purpose |
 |--------|---------|
-| `01_config/` | Video quality thresholds, codec mappings, and configuration dataclasses |
-| `02_data/` | Action taxonomy (13-class boxing enum), dataset classes, and data preparation utilities |
-| `03_pose/` | Pose extraction via MediaPipe, keypoint normalization, and video-level processing |
-| `04_models/` | Neural network architecture (ActionClassifier with temporal convolutions) |
-| `05_training/` | Training loop, loss functions, and optimization utilities |
-| `06_visualization/` | Frame extraction, results plotting, and classification visualization |
-| `07_pipeline/` | End-to-end orchestration combining all modules |
+| `config/` | Video quality thresholds, codec mappings, and configuration dataclasses |
+| `data/` | Action taxonomy (13-class boxing enum), dataset classes, and data preparation utilities |
+| `pose/` | Pose extraction via MediaPipe, keypoint normalization, and video-level processing |
+| `models/` | Neural network architecture (ActionClassifier with temporal convolutions) |
+| `training/` | Training loop, loss functions, and optimization utilities |
+| `visualization/` | Frame extraction, results plotting, and classification visualization |
+| `pipeline/` | End-to-end orchestration combining all modules |
 
 ### Data Flow
 
@@ -27,27 +27,27 @@ Video Input
     │
     ▼
 ┌─────────────────┐
-│  01_config      │  ← Video quality validation
+│  config         │  ← Video quality validation
 └────────┬────────┘
          │
          ▼
 ┌─────────────────┐
-│  03_pose        │  ← MediaPipe keypoint extraction
+│  pose           │  ← MediaPipe keypoint extraction
 └────────┬────────┘
          │
          ▼
 ┌─────────────────┐
-│  02_data        │  ← Sequence windowing, dataset construction
+│  data           │  ← Sequence windowing, dataset construction
 └────────┬────────┘
          │
          ▼
 ┌─────────────────┐
-│  04_models      │  ← Action classification inference
+│  models         │  ← Action classification inference
 └────────┬────────┘
          │
          ▼
 ┌─────────────────┐
-│  06_visualization│  ← Results display
+│  visualization  │  ← Results display
 └─────────────────┘
 ```
 
