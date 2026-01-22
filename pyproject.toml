@@ -1,0 +1,21 @@
+[project]
+name = "fight-club"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "ipykernel>=7.1.0",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.10.0",
+    "mediapipe>=0.10.31",
+    "numpy>=1.26.0",
+    "opencv-python>=4.13.0.90",
+    "torch>=2.9.1",
+    "tqdm>=4.66.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.13",
+]
