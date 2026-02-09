@@ -7,8 +7,7 @@ from typing import Optional
 
 import cv2
 
-# Minimum quality thresholds for pose estimation. Videos failing any threshold
-# will be rejected before processing to avoid wasted computation.
+# Minimum quality thresholds for pose estimation. Videos failing any threshold; will be rejected before processing to avoid wasted computation.
 MIN_FPS = 24.0
 MIN_WIDTH = 640
 MIN_HEIGHT = 480
@@ -49,13 +48,12 @@ def extract_video_metadata_opencv(filepath: str) -> dict:
     """
     Extract video stream metadata using OpenCV.
 
-    This approach requires no external system dependencies like ffmpeg,
-    making the code portable across different environments.
+    This approach requires no external system dependencies like ffmpeg; making the code portable across different environments.
     """
     cap = cv2.VideoCapture(filepath)
 
     if not cap.isOpened():
-        raise RuntimeError(f"Could not open video file: {filepath}")
+        raise RuntimeError(f"Video file path couldn't be opened: {filepath}")
 
     try:
         width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
@@ -123,20 +121,20 @@ def validate_video_quality(filepath: str) -> VideoQualityReport:
         )
 
     return VideoQualityReport(
-        filepath=filepath,
-        width=width,
-        height=height,
-        fps=fps,
-        duration_seconds=duration,
-        bitrate_kbps=bitrate_kbps,
-        codec=codec,
-        passes_minimum=len(rejection_reasons) == 0,
-        rejection_reasons=rejection_reasons,
+        filepath = filepath,
+        width = width,
+        height = height,
+        fps = fps,
+        duration_seconds = duration,
+        bitrate_kbps = bitrate_kbps,
+        codec = codec,
+        passes_minimum = len(rejection_reasons) == 0,
+        rejection_reasons = rejection_reasons,
     )
 
 
 def print_quality_report(report: VideoQualityReport) -> None:
-    """Display video quality validation results in a readable format."""
+    """Returing the video quality in a readable format."""
     print(f"\n{'=' * 60}")
     print(f"Video Quality Report for {Path(report.filepath).name}")
     print(f"{'=' * 60}")
